@@ -42,6 +42,7 @@ Vagrant.configure(2) do |config|
     vb.memory = options['memory']
     # machine name (for VirtualBox UI)
     vb.name = options['machine_name']
+        # vb.gui = true
   end
 
   # machine name (for vagrant console)
