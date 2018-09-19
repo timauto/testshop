@@ -20,6 +20,9 @@ debconf-set-selections <<< "mysql-community-server mysql-community-server/root-p
 debconf-set-selections <<< "mysql-community-server mysql-community-server/re-root-pass password \"''\""
 echo "Done!"
 
+info "Add PHp 7.1 repository"
+add-apt-repository ppa:ondrej/php -y
+
 info "Update OS software"
 apt-get update
 apt-get upgrade -y
