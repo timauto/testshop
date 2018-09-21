@@ -43,6 +43,7 @@ return [
             'rules' => [
                 '' => 'site/index',
                 'contact' => 'contact/index',
+                '<_a:login|logout>' => 'site/<_a>',
             ],
         ],
 
