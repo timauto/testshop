@@ -24,6 +24,7 @@ return [
                 'name' => '_identity',
                 'httpOnly' => true,
                 'domain' => $params['cookieDomain'],
+            ],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
