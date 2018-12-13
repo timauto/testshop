@@ -1,8 +1,8 @@
 <?php
-namespace frontend\tests\unit\models;
+namespace frontend\tests\unit\forms;
 
 use common\fixtures\UserFixture;
-use frontend\models\SignupForm;
+use frontend\forms\SignupForm;
 
 class SignupFormTest extends \Codeception\Test\Unit
 {
@@ -30,9 +30,9 @@ class SignupFormTest extends \Codeception\Test\Unit
             'password' => 'some_password',
         ]);
 
-        $user = $model->signup();
+        $user = $model->validate();
 
-        expect($user)->isInstanceOf('common\models\User');
+        expect($user)->isInstanceOf('common\entities\User');
 
         expect($user->username)->equals('some_username');
         expect($user->email)->equals('some_email@example.com');
@@ -47,7 +47,7 @@ class SignupFormTest extends \Codeception\Test\Unit
             'password' => 'some_password',
         ]);
 
-        expect_not($model->signup());
+        expect_not($model->validate());
         expect_that($model->getErrors('username'));
         expect_that($model->getErrors('email'));
 
